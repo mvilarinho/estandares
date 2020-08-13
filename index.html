@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script language="javascript" type="text/javascript" src="https://github.com/processing/p5.js/releases/download/1.1.9/p5.js"></script>
+    <script language="javascript" src="https://github.com/processing/p5.js/releases/download/1.1.9/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+</head>
+
+<body>
+    <h2 style="color: brown;">
+        <br>
+        Xestión de Estándares de Aprendizaxe de ESO e BAC - Galiza - LOMCE
+    </h2>
+
+    <h3> Selecciona curso e materia para obter os estándares de aprendizaxe</h3>
+
+    <table>
+        <tr>
+            <td>
+                <form action="javascript:cargaMaterias(curso.options[this.curso.selectedIndex].text)">
+                    <select id="curso" name="curso" onchange="this.form.submit()">
+                    </select>
+                    <input type="submit" value="Enviar">
+                </form>
+
+            </td>
+            <td> &nbsp;&nbsp;&nbsp;&nbsp; </td>
+            <td>
+                <form action="javascript:cargaEstandares(
+                    curso.options[this.curso.selectedIndex].text,materia.options[this.materia.selectedIndex].text)">
+                    <select name="materia" id="materia" onchange="this.form.submit()">
+                    </select>
+                    <input type="submit" value="Enviar">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th> Aprendizaxes Adquiridas </th>
+            <th> </th>
+            <th> Aprendizaxes NON Adquiridas </th>
+        </tr>
+        <tr>
+            <td>
+                <select id="s1" ondblclick="pasaValor(this)" style="width: 600px; height: 600px;" multiple>
+                </select>
+            </td>
+            <td><button name="bPasaDer" onclick="javascript:botonPasaValor(s1)"
+                    style="font-size: 24px; background-color: brown; color: white;">&nbsp;&nbsp;>&nbsp;&nbsp;</button>
+                <br> <br> <br>
+                <button name="bPasaEsq" onclick="botonPasaValor(s2)"
+                    style="font-size: 24px; background-color: brown; color: white;">&nbsp;&nbsp;<&nbsp;&nbsp;</button>
+            </td>
+            <td>
+                <select id="s2" ondblclick="pasaValor(this)" style="width: 600px; height: 600px;" multiple>
+
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <center><button name="borrar" onclick="borrar('s1')"
+                        style="font-size: 24px; background-color: brown; color: white;">Borrar</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button name="b1" onclick="copiar(this,'soCodigos1')"
+                        style="font-size: 24px; background-color: brown; color: white;">Copiar</button>
+                    &nbsp;&nbsp;&nbsp; <input type="checkbox" id="soCodigos1" style="font-size: 24px;" checked=True>
+                    <label for="soCodigos" style="color:brown; font-size:24px;">Só Códigos</label> </center>
+            </td>
+            <td>
+            </td>
+            <td>
+                <center><button name="borrar" onclick="borrar('s2')"
+                        style="font-size: 24px; background-color: brown; color: white;">Borrar</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button name="b2" onclick="copiar(this,'soCodigos2')"
+                        style="font-size: 24px; background-color: brown; color: white;">Copiar</button>
+                    &nbsp;&nbsp;&nbsp; <input type="checkbox" id="soCodigos2" style="font-size: 24px;" checked=True>
+                    <label for="soCodigos2" style="color:brown; font-size:24px;">Só Códigos</label> </center>
+            </td>
+        </tr>
+    </table>
+
+</html>
