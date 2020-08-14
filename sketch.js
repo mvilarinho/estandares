@@ -20,6 +20,7 @@ function setup() {
         html = html + "<option value='" + listaCursos[i] + "'>" + listaCursos[i] + "</option>" + "\n";
     }
     cursos.html(html);
+    cargaMaterias(listaCursos[0]);
 
 }
 
