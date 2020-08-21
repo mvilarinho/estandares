@@ -17,3 +17,7 @@ A páxina utiliza as librerias `p5.js` e `underscore.js` para o manexo de datos.
 Accede a unha versión en funcionamento da [páxina](https://mvilarinho.github.io/estandares)
 
 ![Pantallazo](pantallazo.png)
+
+O que fica pendente,`TODO`:
+
+- Completar o ficheiro `estandares.json` cos estándares das materias de [4º da ESO](https://www.edu.xunta.gal/portal/guiadalomce/secundaria) e [2º de BAC](https://www.edu.xunta.gal/portal/guiadalomce/bacharelato).
